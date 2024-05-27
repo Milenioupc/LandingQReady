@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QReady - Control de Acceso Universitario</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="js/qrcode.min.js"></script> <!-- Incluye la librería QRCode -->
 </head>
 <body>
     <header>
@@ -27,7 +28,12 @@
         </div>
     </header>
     
-    <!-- Resto del contenido -->
+    <!-- Sección para la generación de QR -->
+    <section id="qr-generation" class="qr-generation">
+        <h2>Genera tu Código QR</h2>
+        <button id="generateQR" class="btn">Generar QR</button>
+        <div id="qrcode"></div>
+    </section>
     
     <section id="features" class="features">
         <h2>Características</h2>
@@ -68,6 +74,18 @@
         <p>Para más información, contáctanos en <a href="mailto:info@qready.com">info@qready.com</a></p>
     </footer>
     
-    <script src="script.js"></script>
+    <script>
+        document.getElementById('generateQR').addEventListener('click', function() {
+            var qrcodeContainer = document.getElementById('qrcode');
+            qrcodeContainer.innerHTML = ''; // Limpiar el contenedor de QR antes de generar uno nuevo
+            
+            var qrData = 'Este es un código QR de ejemplo'; // Datos que se incluirán en el QR
+            var qrcode = new QRCode(qrcodeContainer, {
+                text: qrData,
+                width: 128,
+                height: 128
+            });
+        });
+    </script>
 </body>
 </html>

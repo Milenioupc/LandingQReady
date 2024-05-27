@@ -3,11 +3,11 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #9c9494;
 }
 
 header {
-    background: #da0606;
+    background: #c72121;
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -36,8 +36,8 @@ header nav ul li a {
 }
 
 .hero {
-    height: 70vh; 
-    background: url('/img/upc.jpg') no-repeat center center/cover;
+    height: 70vh; /* Ajusta la altura según necesites */
+    background: url('img/upc.jpg') no-repeat center center/cover;
     position: relative;
     display: flex;
     justify-content: center;
@@ -70,6 +70,11 @@ header nav ul li a {
     text-decoration: none;
     font-size: 1em;
     cursor: pointer;
+}
+
+.qr-generation {
+    padding: 50px 20px;
+    text-align: center;
 }
 
 .features {
